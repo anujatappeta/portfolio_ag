@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuja Tappeta | Portfolio</title>
+  <meta name="description"
+    content="Personal portfolio of Anuja Tappeta - Software Developer, AI/ML Enthusiast, and Future Software Engineer. Discover innovative projects and technical skills.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Page Loader -->
+  <div id="loader-overlay">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">INITIALIZING SYSTEMS...</div>
+  </div>
+
+  <!-- Custom Custom Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-outline"></div>
+
+  <!-- Background Dynamic Canvas & Glow Effects -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="bg-glow-top"></div>
+  <div class="bg-glow-right"></div>
+  <div class="bg-glow-left"></div>
+
+  <!-- SVG Gradient definitions used across elements -->
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0071e3" />
+      <stop offset="100%" stop-color="#8622e7" />
+    </linearGradient>
+  </svg>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar-custom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="#home" class="navbar-brand-custom">
+        ANUJA<span>.</span>
+      </a>
+
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="navbar-nav-custom">
+        <li><a href="#home" class="nav-link-custom active">Home</a></li>
+        <li><a href="#about" class="nav-link-custom">About</a></li>
+        <li><a href="#skills" class="nav-link-custom">Skills</a></li>
+        <li><a href="#projects" class="nav-link-custom">Projects</a></li>
+        <li><a href="#certifications" class="nav-link-custom">Certifications</a></li>
+        <li><a href="#experience" class="nav-link-custom">Experience</a></li>
+        <li><a href="#contact" class="nav-link-custom">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION (Hero) -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left details column -->
+        <div class="col-lg-6 reveal-left">
+          <h1 class="hero-title-main">ANUJA TAPPETA</h1>
+          <div class="hero-role-wrapper">
+            <span id="role-typewriter"></span>
+          </div>
+          <p class="hero-desc">
+            Building intelligent solutions with code, creativity and innovation. Focus on engineering reliable software
+            products and AI integrations.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-premium">View Projects</a>
+            <a href="assets/resum_cisco.pdf" class="btn-premium-outline" download>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn-premium-outline">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Right interactive 3D elements column -->
+        <div class="col-lg-6 mt-5 mt-lg-0 d-flex justify-content-center align-items-center reveal-right">
+          <div class="workspace-container">
+            <!-- 3D orbiting circles and tech nodes -->
+            <div class="tech-orbit">
+              <div class="tech-icon-3d t1" title="Python"><i class="fab fa-python"></i></div>
+              <div class="tech-icon-3d t2" title="Java"><i class="fab fa-java"></i></div>
+              <div class="tech-icon-3d t3" title="AWS"><i class="fab fa-aws"></i></div>
+              <div class="tech-icon-3d t4" title="Git"><i class="fab fa-git-alt"></i></div>
+            </div>
+
+            <!-- Workspace core 3D workspace -->
+            <div class="workspace-3d">
+              <div class="laptop-screen">
+                <div class="laptop-screen-content">
+                  <span style="color:#ad3da3">import</span> langchain<br>
+                  <span style="color:#ad3da3">from</span> groq <span style="color:#ad3da3">import</span> Groq<br>
+                  <span style="color:#6a737d"># Initialization</span><br>
+                  llm = Groq(model=<span style="color:#d12f1b">"llama-3"</span>)<br>
+                  db = ChromaDB(embeddings)<br>
+                  rag = RAGChatbot(llm, db)<br><br>
+                  print(<span style="color:#d12f1b">"System Online."</span>)<br>
+                  <span style="color:#1d1d1f">_</span>
+                </div>
+              </div>
+              <div class="laptop-keyboard"></div>
+            </div>
+
+            <!-- Floating cubes scene -->
+            <div class="cube-3d-scene c1">
+              <div class="cube-3d">
+                <div class="cube-face face-front"></div>
+                <div class="cube-face face-back"></div>
+                <div class="cube-face face-right"></div>
+                <div class="cube-face face-left"></div>
+                <div class="cube-face face-top"></div>
+                <div class="cube-face face-bottom"></div>
+              </div>
+            </div>
+
+            <div class="cube-3d-scene c2">
+              <div class="cube-3d" style="width:20px; height:20px;">
+                <div class="cube-face face-front" style="transform: rotateY(0deg) translateZ(10px);"></div>
+                <div class="cube-face face-back" style="transform: rotateY(180deg) translateZ(10px);"></div>
+                <div class="cube-face face-right" style="transform: rotateY(90deg) translateZ(10px);"></div>
+                <div class="cube-face face-left" style="transform: rotateY(-90deg) translateZ(10px);"></div>
+                <div class="cube-face face-top" style="transform: rotateX(90deg) translateZ(10px);"></div>
+                <div class="cube-face face-bottom" style="transform: rotateX(-90deg) translateZ(10px);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 reveal-up">
+          <div class="about-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.1">
+            <h3 class="about-name">Anuja Tappeta</h3>
+
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <div class="about-meta-label">Education</div>
+                <div class="about-meta-val">B.Tech Computer Science Engineering</div>
+
+                <div class="about-meta-label">College</div>
+                <div class="about-meta-val">Velagapudi Ramakrishna Siddhartha Engineering College</div>
+              </div>
+              <div class="col-md-6">
+                <div class="about-meta-label">Academic Profile</div>
+                <div class="about-meta-val">CGPA: 9.13</div>
+
+                <div class="about-meta-label">Focus Areas</div>
+                <div class="about-meta-val">Data Structures, Algorithms, AI/ML, Cloud Computing</div>
+              </div>
+            </div>
+
+            <hr style="border-color: rgba(0,0,0,0.06); margin: 25px 0;">
+
+            <div class="about-objective-title">Objective</div>
+            <p class="about-objective-text">
+              To secure a challenging position where I can apply my technical knowledge, problem-solving skills, and
+              passion for learning to contribute to the organization’s success while continuously improving my skills.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">My Skills</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="skills-grid reveal-up">
+        <!-- Languages skill category -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">Languages</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="90"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">90%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Java</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="85"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">85%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">C Language</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="80"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database & Tools category -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">Database & Tools</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">SQL (Oracle SQL Plus 21c)</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="85"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">85%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Git & GitHub</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="90"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">90%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud & AI/ML category (Circular progress elements) -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">Cloud & AI/ML</h3>
+          <div class="skill-circular-wrapper">
+            <!-- AWS Skill Circular Progress -->
+            <div class="skill-circle-box">
+              <div class="svg-circle-container">
+                <svg>
+                  <circle class="svg-circle-bg" cx="40" cy="40" r="36" />
+                  <circle class="svg-circle-fill" cx="40" cy="40" r="36" data-percent="80" />
+                </svg>
+                <div class="skill-circle-percent">80%</div>
+              </div>
+              <div class="skill-circle-label">AWS Cloud</div>
+            </div>
+
+            <!-- RAG Skill Circular Progress -->
+            <div class="skill-circle-box">
+              <div class="svg-circle-container">
+                <svg>
+                  <circle class="svg-circle-bg" cx="40" cy="40" r="36" />
+                  <circle class="svg-circle-fill" cx="40" cy="40" r="36" data-percent="75" />
+                </svg>
+                <div class="skill-circle-percent">75%</div>
+              </div>
+              <div class="skill-circle-label">Retrieval RAG</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills category -->
+        <div class="skills-category-card">
+          <h3 class="skills-category-title">Professional Qualities</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Problem Solving</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="95"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">95%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Team Collaboration</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="90"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">90%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Communication</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="85"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">85%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Decision Making</span>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="85"></div>
+                </div>
+              </div>
+              <span class="font-monospace text-accent fs-6">85%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="row g-4 reveal-up">
+        <!-- Project 1 Card -->
+        <div class="col-md-6">
+          <div class="project-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.1"
+            data-bs-toggle="modal" data-bs-target="#project1Modal">
+            <div class="project-visual-header">
+              <!-- Interactive Neural Net Background rendering here -->
+              <canvas id="project-neural-canvas" class="project-neural-canvas"></canvas>
+              <div class="text-center position-relative" style="z-index: 2;">
+                <i class="fas fa-brain fa-3x" style="color:var(--primary-color);"></i>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">LangChain</span>
+                <span class="project-tag">ChromaDB</span>
+                <span class="project-tag">Groq LLM</span>
+              </div>
+              <h3 class="project-title">Website Based RAG Chatbot</h3>
+              <p class="project-desc">
+                An advanced Question Answering system designed to scrape target websites, execute recursive text
+                chunking, build embeddings, and retrieve facts dynamically using a localized vector database.
+              </p>
+
+              <div class="project-footer">
+                <span class="project-more-btn">Read Details <i class="fas fa-chevron-right"></i></span>
+                <div>
+                  <a href="https://github.com/anujatappeta/chatbot_rag.git" target="_blank"
+                    class="project-link-icon me-3"
+                    onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/anujatappeta/epics','_blank');"
+                    title="GitHub Source"><i class="fab fa-github"></i></a>
+                  <a href="https://github.com/anujatappeta/chatbot_rag.git" target="_blank" class="project-link-icon"
+                    onclick="event.preventDefault(); event.stopPropagation(); window.open('https://nzj2gfohsxiq6vhj95zknz.streamlit.app/','_blank');"
+                    title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 Card -->
+        <div class="col-md-6">
+          <div class="project-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.1"
+            data-bs-toggle="modal" data-bs-target="#project2Modal">
+            <div class="project-visual-header">
+              <!-- Interactive rotating 3D mango leaf SVG model -->
+              <svg viewBox="0 0 100 100" class="project-leaf-wrapper">
+                <!-- Drop shadow filter -->
+                <defs>
+                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#00ffff" flood-opacity="0.3" />
+                  </filter>
+                  <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#4caf50" />
+                    <stop offset="60%" stop-color="#ffeb3b" />
+                    <stop offset="100%" stop-color="#388e3c" />
+                  </linearGradient>
+                </defs>
+                <!-- Stylized Organic Mango Leaf Path -->
+                <path d="M 50 15 C 75 35, 75 65, 50 85 C 25 65, 25 35, 50 15 Z" fill="url(#leafGrad)"
+                  filter="url(#shadow)" />
+                <path d="M 50 15 C 50 15, 50 85, 50 85" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
+                  opacity="0.4" />
+                <path d="M 50 35 Q 60 40, 65 35" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.3" />
+                <path d="M 50 45 Q 62 50, 67 45" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.3" />
+                <path d="M 50 55 Q 62 60, 66 55" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.3" />
+                <path d="M 50 35 Q 40 40, 35 35" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.3" />
+                <path d="M 50 45 Q 38 50, 33 45" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.3" />
+                <path d="M 50 55 Q 38 60, 34 55" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.3" />
+              </svg>
+            </div>
+
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Deep Learning</span>
+                <span class="project-tag">EfficientNet CNN</span>
+              </div>
+              <h3 class="project-title">Mango Leaf Disease Detection</h3>
+              <p class="project-desc">
+                An intelligent agricultural assistant using EfficientNet-B3 CNN to classify mango plant foliage
+                conditions. Integrated with a database of actionable organic cures and recommendations.
+              </p>
+
+              <div class="project-footer">
+                <span class="project-more-btn">Read Details <i class="fas fa-chevron-right"></i></span>
+                <div>
+                  <a href="https://github.com/anujatappeta/epics" target="_blank" class="project-link-icon me-3"
+                    onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/anujatappeta/epics','_blank');"
+                    title="GitHub Source"><i class="fab fa-github"></i></a>
+                  <a href="https://nzj2gfohsxiq6vhj95zknz.streamlit.app/" target="_blank" class="project-link-icon"
+                    onclick="event.preventDefault(); event.stopPropagation(); window.open('https://nzj2gfohsxiq6vhj95zknz.streamlit.app/','_blank');"
+                    title="Live Preview">
+
+                    <i class="fas fa-external-link-alt"></i>
+
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 1 Modal -->
+  <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom d-flex justify-content-between align-items-center">
+          <h4 class="modal-project-title">Website Based RAG Chatbot Using LangChain</h4>
+          <button type="button" class="modal-close-custom" data-bs-dismiss="modal" aria-label="Close"><i
+              class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <div class="modal-tech-list">
+            <span class="project-tag">LangChain</span>
+            <span class="project-tag">ChromaDB</span>
+            <span class="project-tag">Groq API</span>
+            <span class="project-tag">Llama 3</span>
+            <span class="project-tag">Vector Embeddings</span>
+          </div>
+
+          <h5 class="modal-feature-title">Core Capabilities & Highlights</h5>
+          <ul class="modal-feature-list">
+            <li><strong>Automated Scraping:</strong> Extracts raw website text blocks cleanly using tailored scrapers
+              and parses raw HTML layouts.</li>
+            <li><strong>Recursive Chunking:</strong> Divides structured documents dynamically to preserve contextual
+              overlaps for high accuracy retrievals.</li>
+            <li><strong>High-Fidelity Embeddings:</strong> Generates semantic vector indices from document parts to
+              represent data within multidimensional semantic space.</li>
+            <li><strong>Chroma Vector Store:</strong> Stores vectorized text chunks in memory with rapid
+              nearest-neighbor indexing.</li>
+            <li><strong>Intelligent Context Injection:</strong> Retrieves context dynamically and prompts Groq LLM
+              (Llama 3) for hallucinations-free responses.</li>
+          </ul>
+
+          <p class="text-muted">
+            This chatbot demonstrates a production-style Retrieval-Augmented Generation implementation, allowing users
+            to converse directly with complex document libraries, APIs, or company websites.
+          </p>
+        </div>
+        <div class="modal-footer modal-footer-custom">
+          <a href="https://github.com/anujatappeta/epics" target="_blank" class="btn-premium"><i
+              class="fab fa-github me-2"></i> GitHub Repository</a>
+          <a href="https://nzj2gfohsxiq6vhj95zknz.streamlit.app/" target="_blank" class="btn-premium-outline"><i
+              class="fas fa-external-link-alt me-2"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Modal -->
+  <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom d-flex justify-content-between align-items-center">
+          <h4 class="modal-project-title">Mango Leaf Disease Detector & Organic Advisor</h4>
+          <button type="button" class="modal-close-custom" data-bs-dismiss="modal" aria-label="Close"><i
+              class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <div class="modal-tech-list">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">TensorFlow</span>
+            <span class="project-tag">EfficientNet-B3</span>
+            <span class="project-tag">Computer Vision</span>
+            <span class="project-tag">Flask/Web API</span>
+          </div>
+
+          <h5 class="modal-feature-title">Core Capabilities & Highlights</h5>
+          <ul class="modal-feature-list">
+            <li><strong>Disease Classification:</strong> Identifies leaf pathologies like Anthracnose, Sooty Mould,
+              Powdery Mildew, and Gall Midge with extreme validation precision.</li>
+            <li><strong>EfficientNet-B3 Core:</strong> Leverages a custom-tuned, transfer-learned CNN backbone model
+              architecture optimized for visual feature recognition.</li>
+            <li><strong>Recommendation Engine:</strong> Maps identified diseases immediately to organic biological
+              remedies, preventing chemical crop damage.</li>
+            <li><strong>AI Agricultural Assistant:</strong> Built with simple upload controls, supporting farm workers
+              with swift local diagnosis.</li>
+          </ul>
+
+          <p class="text-muted">
+            The solution blends deep learning computer vision algorithms with organic botany databases, helping
+            smallholder farmers identify disease indicators proactively and apply ecofriendly solutions.
+          </p>
+        </div>
+        <div class="modal-footer modal-footer-custom">
+          <a href="https://github.com/anujatappeta/epics" target="_blank" class="btn-premium"><i
+              class="fab fa-github me-2"></i> GitHub Repository</a>
+          <a href="https://nzj2gfohsxiq6vhj95zknz.streamlit.app/" target="_blank" class="btn-premium-outline"><i
+              class="fas fa-external-link-alt me-2"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">Certifications</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="row g-4 reveal-up">
+        <!-- Certificate 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="cert-card" data-tilt data-tilt-max="12">
+            <div class="cert-icon"><i class="fab fa-aws"></i></div>
+            <h3 class="cert-title">AWS Cloud Practitioner Essentials</h3>
+            <span class="cert-issuer">Amazon Web Services</span>
+          </div>
+        </div>
+        <!-- Certificate 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="cert-card delay-1" data-tilt data-tilt-max="12">
+            <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+            <h3 class="cert-title">CCNA 1: Introduction to Networks</h3>
+            <span class="cert-issuer">Cisco Systems</span>
+          </div>
+        </div>
+        <!-- Certificate 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="cert-card delay-2" data-tilt data-tilt-max="12">
+            <div class="cert-icon"><i class="fas fa-route"></i></div>
+            <h3 class="cert-title">CCNA 2: Switching, Routing & Wireless</h3>
+            <span class="cert-issuer">Cisco Systems</span>
+          </div>
+        </div>
+        <!-- Certificate 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="cert-card delay-3" data-tilt data-tilt-max="12">
+            <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="cert-title">CCNA 3: Enterprise Net, Security & Auto</h3>
+            <span class="cert-issuer">Cisco Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Glowing progress center line -->
+        <div class="timeline-progress-bar"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Feb 2026 - Apr 2026</div>
+            <h3 class="timeline-role">AI/ML Virtual Intern</h3>
+            <h4 class="timeline-company">Infosys Springboard Virtual Internship 6.0</h4>
+            <div class="timeline-body">
+              <ul>
+                <li>Developed an AI-powered e-commerce recommendation engine using Python Reflex.</li>
+                <li>Implemented Content-Based Filtering models mapping user profiles to catalog indices.</li>
+                <li>Implemented Collaborative Filtering systems to determine customer purchase vectors.</li>
+                <li>Engineered a Hybrid Recommendation System optimizing accuracy and cold-start speed.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">Achievements</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="achievement-wrapper reveal-up">
+        <div class="trophy-container">
+          <div class="trophy-glow"></div>
+          <i class="fas fa-trophy trophy-icon"></i>
+        </div>
+
+        <div class="counter-number-wrapper">
+          <span class="counter-number" id="gate-counter">0</span>
+        </div>
+
+        <h3 class="achievement-card-title">GATE CSE Qualified</h3>
+        <p class="achievement-details" id="gate-unlock-text"
+          style="opacity: 0; transform: translateY(15px); transition: all 1s ease;">
+          Successfully qualified the highly competitive Graduate Aptitude Test in Engineering 2026 (Computer Science &
+          Information Technology).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title-wrapper reveal-up">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left Panel: Contact info -->
+        <div class="contact-info-panel reveal-left">
+          <h3 class="font-heading mb-4 text-white uppercase fs-4" style="letter-spacing:1px;">Contact Details</h3>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon-wrapper">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <div class="contact-info-label">Write to me</div>
+              <a href="mailto:anujatappeta@gmail.com" class="contact-info-val">anujatappeta@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon-wrapper">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <div class="contact-info-label">Call me</div>
+              <a href="tel:+917842323599" class="contact-info-val">+91 78423 23599</a>
+            </div>
+          </div>
+
+          <div class="contact-social-section">
+            <h4 class="contact-social-title">Social Ecosystem</h4>
+            <div class="contact-social-grid">
+              <a href="https://www.linkedin.com/in/anuja-tappeta/" target="_blank" rel="noopener"
+                class="contact-social-btn linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/anujatappeta" target="_blank" rel="noopener" class="contact-social-btn github"
+                title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.geeksforgeeks.org/profile/anujac5" target="_blank" rel="noopener"
+                class="contact-social-btn gfg" title="GeeksforGeeks"><i class="fas fa-code"></i></a>
+              <a href="https://leetcode.com/u/anuja_5/" target="_blank" rel="noopener"
+                class="contact-social-btn leetcode" title="LeetCode"><i class="fas fa-terminal"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Message Form -->
+        <div class="contact-form-panel reveal-right">
+          <form id="contact-form" autocomplete="off">
+            <div class="form-group-custom">
+              <input type="text" id="form-name" class="form-input-custom" placeholder=" " required>
+              <label for="form-name" class="form-label-custom">Your Name</label>
+              <div class="form-input-line-glow"></div>
+            </div>
+
+            <div class="form-group-custom">
+              <input type="email" id="form-email" class="form-input-custom" placeholder=" " required>
+              <label for="form-email" class="form-label-custom">Email Address</label>
+              <div class="form-input-line-glow"></div>
+            </div>
+
+            <div class="form-group-custom">
+              <textarea id="form-message" class="form-input-custom" rows="4" placeholder=" " required></textarea>
+              <label for="form-message" class="form-label-custom">Write Message...</label>
+              <div class="form-input-line-glow"></div>
+            </div>
+
+            <div class="btn-explosion-wrap">
+              <button type="submit" id="contact-submit-btn" class="btn-premium">
+                Send Message <i class="fas fa-paper-plane ms-2"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-waves">
+      <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" class="wave-use w1" />
+          <use xlink:href="#gentle-wave" x="48" y="3" class="wave-use w2" />
+          <use xlink:href="#gentle-wave" x="48" y="5" class="wave-use w3" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="container footer-content">
+      <p class="footer-text">&copy; 2026 Anuja Tappeta. All Rights Reserved.</p>
+      <p class="footer-sub">Designed with <span>innovation</span> &amp; <span>code</span>.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Vanilla-Tilt JS from CDN (Auto initializes data-tilt elements) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <!-- Custom Logic Script -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
